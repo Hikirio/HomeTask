@@ -8,6 +8,8 @@ if (isset($_POST) && !empty($_POST)) {
          header('Location: /HomeTask/auth/index.php');
          exit;}
 
+    
+
 */
     logout();
 
