@@ -5,12 +5,8 @@ if (isset($_POST) && !empty($_POST)) {
 } elseif (isset($_GET)) {
     /*if  (isste($_GET) && key_exists('logout',$_GET)){
          session_destroy();
-         header('Location: /HomeTask/auth/index.php');
-         exit;}
-
-
-
-*/
+         header('Location: /HomeTask/auth/func.php');
+         exit;}*/
     logout();
 
 }
