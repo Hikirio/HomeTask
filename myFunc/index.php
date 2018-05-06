@@ -8,9 +8,13 @@
 
 
 require_once "func.php";
+if ($_SESSION['access']) {
+    header('Location: /HomeTask/myFunc/vseok.php');
+    exit;
+}
 ?>
 
-<form method="POST">
+<form   method="POST">
     <div class="input-group">
         <p>Вопрос №1</p>
         <span >Что такое PHP?</span>
@@ -18,7 +22,7 @@ require_once "func.php";
         <br/>
         <p>опрос №2</p>
         <span class="input-group-addon">Что такое ХТМЛ?</span>
-        <input type="password" name="ans" value="">
+        <input type="text" name="ans" value="">
     </div>
     <p><input type="submit" value="Войти"></p>
 

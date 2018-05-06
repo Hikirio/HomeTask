@@ -1,5 +1,6 @@
 <?php
 require_once "function.php";
+require_once "functionBlog.php";
 if (!$_SESSION['access']) {
     header('Location: /HomeTask/auth/access_denied.php');
     exit;
@@ -16,10 +17,25 @@ if (!$_SESSION['access']) {
 <body>
 
 <div>
+    <!-- ; это endif
+    = это echo
+    -->
     <p>Hello "<?php echo viewUserName() ?>"</p>
-    <a href="index.php">Выход </a>
+    <a href="index.php">Выход</a>
+    <div class="blog">
+        <?php $articles = getArticles(); ?>
+        <?php foreach ($articles
 
-</div>
-
+        as $article) { ?><!--   { это : -->
+        <div class="article">
+            <a href="singleArticle.php?title=<?php echo $article['title']; ?> &content=<?php echo $article['content']; ?>">
+                <h1><?php echo $article['title']; ?></h1>
+            </a>
+            <p><?php echo $article['content']; ?></p>
+            <h1>title</h1>
+            <p>content</p>
+            <?php } ?>
+        </div>
+    </div>
 </body>
 </html>

@@ -10,25 +10,23 @@ session_start();
 const  VOOPROS1 = 'PHP';
 const VOPROD2 = 'HTML';
 
-function test(){
+function test()
+{
 
     $check = null;
-    if (isset($_POST['answer']) && isset($_POST['ans'])){
+    if (isset($_POST['answer']) && isset($_POST['ans'])) {
         if ($_POST['answer'] == VOOPROS1 && $_POST['ans'] == VOPROD2) {
             $check = true;
-    }
+        }
+
         if ($check) {
             $_SESSION['access'] = true;
             $_SESSION['answer'] = $_POST['answer'];
             $_SESSION['ans'] = $_POST['ans'];
-            header('Location: /HomeTask/auth/blog.php');
-            exit;
-        } else {
-            $_SESSION['access'] = false;
-            header('Location: /HomeTask/auth/access_denied.php');
+            header('Location: /HomeTask/myFunc/vseok.php');
             exit;
         }
 
-
-
+    }
 }
+

@@ -4,11 +4,12 @@ session_start();
 const LOGIN = 'user1';
 const PASS = '123';
 
+
 function login(array $post)
 {
     $check = null;
     if (isset($post['login']) && isset($post['password'])) {
-        if ($post['login'] == LOGIN && $post['password'] == PASS) {
+        if ($post['login'] == LOGIN && md5($post['password']) === md5(PASS )) {
             $check = true;
         }
     }
@@ -33,3 +34,5 @@ function viewUserName()
 {
     return isset($_SESSION['login']) ? $_SESSION['login'] : null;
 }
+
+?>

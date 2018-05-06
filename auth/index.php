@@ -1,4 +1,6 @@
 <?php
+
+
 require_once "function.php";
 if (isset($_POST) && !empty($_POST)) {
     login($_POST);
@@ -16,7 +18,6 @@ if ($_SESSION['access']) {
     exit;
 }
 
-
 ?>
 
 
@@ -29,5 +30,6 @@ if ($_SESSION['access']) {
         <input type="password" name="password" value="">
     </div>
     <p><input type="submit" value="Войти"></p>
+    <?php  echo md5(PASS)?>
 
 </form>
